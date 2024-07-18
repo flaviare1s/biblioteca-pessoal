@@ -1,5 +1,5 @@
 .header {
-  background-color: #6E5C62;
+  background-color: #e8dacc;
   padding: 0 20px;
 }
 
@@ -16,6 +16,23 @@
   gap: 10px;
 }
 
+.nav-link {
+  color: #5a0f19 !important;
+  font-weight: bold !important;
+}
+
 .nav-link:hover {
-  font-weight: bold;
+  color: #8a3119 !important;
+}
+
+.nav-btn {
+  background-color: #e8dacc !important;
+  color: #5a0f19 !important;
+  font-weight: bold !important;
+  border: 2px solid #5a0f19 !important;
+}
+
+.nav-btn:hover {
+  background-color: #5a0f19 !important;
+  color: #e8dacc !important;
 }
