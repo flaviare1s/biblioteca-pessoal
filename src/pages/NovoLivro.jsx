@@ -1,3 +1,4 @@
+import '../styles/NovoLivro.css'
 import { useState } from 'react';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import star from '../assets/star.svg';
@@ -13,7 +14,7 @@ const NovoLivro = () => {
   }
 
   return (
-    <Container className='mt-3'>
+    <main className='px-3'>
       <Form className='form-section'>
         <h2>Cadastrar Novo Livro</h2>
 
@@ -66,11 +67,11 @@ const NovoLivro = () => {
           ))}
         </section>
 
-        <Button variant='dark' type='submit' className='w-100 my-3'>
+        <Button variant='outline-light' type='submit' className='w-100 my-3'>
           Cadastrar Livro
         </Button>
       </Form>
-    </Container>
+    </main>
   );
 }
 
