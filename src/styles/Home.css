@@ -1,13 +1,12 @@
-main{
-    background-color: #5a0f19;
+.home{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: wheat;
+    background-color: #5A0F19;
+    color: #EBDACC;
 }
 
 .aga1{
-    
-    margin-left: 25%;
+    margin-left: 20%;
 }
