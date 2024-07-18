@@ -1,4 +1,4 @@
-.home{
+.banner-home{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -8,5 +8,5 @@
 }
 
 .aga1{
-    margin-left: 20%;
+    margin-left: 25%;
 }
