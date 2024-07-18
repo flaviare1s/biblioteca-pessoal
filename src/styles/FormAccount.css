@@ -1,5 +1,5 @@
 .form-section {
-   max-width: 440px;
+  max-width: 440px;
   margin: 10rem auto 0;
 }
 
@@ -10,18 +10,28 @@
   gap: 0.5rem;
 }
 
+.container-buttons .btn-login {
+  background-color: #8A3119;
+  border: none;
+}
+
+.container-buttons .btn-login:hover {
+  background-color: #6f2e1d;
+}
+
 .container-buttons .login-google {
   background-color: #fff;
   color: #141414;
-  border: 1px solid #141414;
+  border: 2px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .container-buttons .login-google:hover {
-  background-color: transparent;
+  background-color: #fff;
+  border: 2px solid #c25335;
   color: #141414;
 }
 

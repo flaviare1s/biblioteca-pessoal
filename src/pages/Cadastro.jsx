@@ -47,7 +47,7 @@ const Cadastro = () => {
         </Form.Group>
 
         <div className='container-buttons'>
-          <Button variant="dark" type="submit">
+          <Button className='btn-login' variant="dark" type="submit">
             Criar conta 
           </Button>
           <Button className='login-google' type="submit">
@@ -55,8 +55,8 @@ const Cadastro = () => {
             Criar conta com o Google 
           </Button>
         </div>
-        <div className={"text-body-secondary mt-3 "}>
-          <p>Já possui conta? <Link to="/login">Fazer login</Link></p>
+        <div className="mt-3 ">
+          <small>Já possui conta? <Link to="/login">Fazer login</Link></small>
         </div>
       </Form>
     </main>
