@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { UserContext } from "./contexts/UserContext"
-import Navbar from "./components/Navbar"
+import Menu from "./components/Menu"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Cadastro from "./pages/Cadastro"
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <UserContext.Provider value={{}}>
       <BrowserRouter>
-        <Navbar />
+        <Menu />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

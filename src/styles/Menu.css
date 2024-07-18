@@ -1,0 +1,21 @@
+.header {
+  background-color: #6E5C62;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+}
