@@ -37,7 +37,7 @@ const Login = () => {
         </Form.Group>
 
         <div className='container-buttons'>
-          <Button variant="dark" type="submit">
+          <Button className='btn-login' variant="dark" type="submit">
             Entrar 
           </Button>
           <Button className='login-google' type="submit">
@@ -45,8 +45,8 @@ const Login = () => {
             Entrar com Google 
           </Button>
         </div>
-        <div className={"text-body-secondary mt-3 "}>
-          <p>Não possui conta? <Link to="/cadastro">Criar conta</Link></p>
+        <div className="mt-3">
+          <small>Não possui conta? <Link to="/cadastro">Criar conta</Link></small>
         </div>
       </Form>
     </main>
