@@ -1,0 +1,19 @@
+.container1{
+    display: flex;
+    flex-direction: column;
+    background-color: #5A0F19;
+    color: #EBDACC;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.sobre{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+}
+
+.sobre p {
+    align-self: center;
+}
