@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+main{
     background-color: #5A0F19;
     color: #EBDACC;
 }
