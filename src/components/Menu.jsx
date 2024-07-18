@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Button, Container, Nav, Navbar} from 'react-bootstrap'
 
 const Menu = () => {
-  const usuario = true
+  const usuario = false
 
   return (
     <header className='header'>

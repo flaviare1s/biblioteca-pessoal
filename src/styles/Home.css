@@ -1,0 +1,13 @@
+main{
+    background-color: #5a0f19;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+}
+
+.aga1{
+    
+    margin-left: 25%;
+}
