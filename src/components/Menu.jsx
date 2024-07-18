@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Button, Container, Nav, Navbar} from 'react-bootstrap'
 
 const Menu = () => {
-  const usuario = false
+  const usuario = true
 
   return (
     <header className='header'>
@@ -16,12 +16,12 @@ const Menu = () => {
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav className='nav-list ms-auto d-flex align-items-center'>
-            {usuario && <Link className="nav-link text-light" to='/livros'>Meus Livros</Link>}
-						{!usuario && <Link className="nav-link text-light" to='/login'>Login</Link>}
-						{!usuario && <Link className="nav-link text-light" to='/cadastro'>Cadastro</Link>}
-						<Link className="nav-link text-light" to='/sobre'>Sobre</Link>
-						{usuario && <span className="text-light">Nome do Usuário</span>}
-						{usuario && <Button variant="outline-light">Sair</Button>}
+            {usuario && <Link className="nav-link" to='/livros'>Meus Livros</Link>}
+						{!usuario && <Link className="nav-link" to='/login'>Login</Link>}
+						{!usuario && <Link className="nav-link" to='/cadastro'>Cadastro</Link>}
+						<Link className="nav-link" to='/sobre'>Sobre</Link>
+						{usuario && <span className="nav-link">Nome do Usuário</span>}
+						{usuario && <Button className='nav-btn'>Sair</Button>}
             </Nav>
           </Navbar.Collapse>
         </Container>
