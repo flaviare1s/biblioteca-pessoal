@@ -1,0 +1,30 @@
+.form-section {
+   max-width: 440px;
+  margin: 10rem auto 0;
+}
+
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+.container-buttons .login-google {
+  background-color: #fff;
+  color: #141414;
+  border: 1px solid #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.container-buttons .login-google:hover {
+  background-color: transparent;
+  color: #141414;
+}
+
+.login-google img {
+  width: 30px;
+}
