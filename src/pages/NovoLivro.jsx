@@ -1,6 +1,5 @@
-import '../styles/NovoLivro.css'
 import { useState } from 'react';
-import { Button, Container, Form, Row, Col } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
 import { useForm } from 'react-hook-form';
