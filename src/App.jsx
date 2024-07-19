@@ -13,11 +13,22 @@ import NotFound from "./pages/NotFound"
 import Footer from "./components/Footer"
 import { Toaster } from "react-hot-toast"
 import Livro from "./pages/Livro"
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/config";
+import { useEffect, useState } from "react"
 
 
 const App = () => {
+  const [usuarioLogado, setUsuarioLogado] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUsuarioLogado(user);
+    });
+  }, []);
+
   return (
-    <UserContext.Provider value={{}}>
+    <UserContext.Provider value={usuarioLogado} >
       <BrowserRouter>
         <Menu />
         <Routes>
