@@ -32,7 +32,7 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-      <Toaster position="bottom-right" />
+      <Toaster position="top-center" />
     </UserContext.Provider>
   )
 }
