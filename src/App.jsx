@@ -16,7 +16,7 @@ import Livro from "./pages/Livro"
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { useEffect, useState } from "react"
-
+import Loader from "./components/Loader"
 
 const App = () => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -30,26 +30,27 @@ const App = () => {
   }, []);
 
   if(loading){
-    //Este elemento será exibido enquanto a aplicação estiver sendo carregado.
-    return <div>Carregando...</div>
+    return <Loader />
 }
 
   return (
     <UserContext.Provider value={usuarioLogado} >
       <BrowserRouter>
         <Menu />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path='/sobre' element={<Sobre />} />
-          <Route path="/livros" element={<Livros />} />
-          <Route path="/livros/adicionar" element={<NovoLivro />} />
-          <Route path="/livros/editar/:id" element={<EditarLivro />} />
-          <Route path="/livros/:id" element={<Livro />} />
-          <Route path="/politica" element={<Politica />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path='/sobre' element={<Sobre />} />
+            <Route path="/livros" element={<Livros />} />
+            <Route path="/livros/adicionar" element={<NovoLivro />} />
+            <Route path="/livros/editar/:id" element={<EditarLivro />} />
+            <Route path="/livros/:id" element={<Livro />} />
+            <Route path="/politica" element={<Politica />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
       <Toaster position="top-center" />

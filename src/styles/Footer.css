@@ -1,16 +1,17 @@
 .div-footer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 5vh;
     align-items: center;
     background-color: #e8dacc;
     color: #5a0f19;
-    bottom: 0;
+    padding: 10px;
 }
 
 .div-footer h2{
     font-size: 1rem;
     justify-content: center;
+    text-align: center;
 }
 
 .link{

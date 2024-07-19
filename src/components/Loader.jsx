@@ -1,4 +1,3 @@
-import '../styles/Loader.css'
 import {Container, Spinner} from "react-bootstrap";
 
 const Loader = () => {
