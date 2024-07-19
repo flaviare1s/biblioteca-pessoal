@@ -48,7 +48,7 @@ const Livro = () => {
             </div>
           </Card.Body>
         </Card>
-        <Button variant='outline-light' className='my-3'>Voltar</Button>
+        <Button variant='outline-light' className='my-3' onClick={() => window.history.back()}>Voltar</Button>
       </Container>
     </section>
   );
