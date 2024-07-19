@@ -10,17 +10,17 @@ export async function addLivro(data) {
 }
 
 // READ:
-export async function getLivrosUsuario(idUsuario) {
-  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario))
-  const snapshot = await getDocs(filtro)
-  const livros = []
+// export async function getLivrosUsuario(idUsuario) {
+//   const filtro = query (livrosCol, where('idUsuario', '==', idUsuario))
+//   const snapshot = await getDocs(filtro)
+//   const livros = []
 
-  snapshot.forEach((doc) => {
-    livros.push({...doc.data(), id: doc.id})
-  })
+//   snapshot.forEach((doc) => {
+//     livros.push({...doc.data(), id: doc.id})
+//   })
 
-  return livros
-}
+//   return livros
+// }
 
 
 export async function getLivro(id) {
@@ -42,4 +42,19 @@ export async function deleteLivro(id) {
 
   const livroDoc = doc(livrosCol, id)
   await deleteDoc(livroDoc)
+}
+
+
+//TEMPORÁRIO:
+export async function getLivros() {
+
+  const snapshot = await getDocs(livrosCol)
+  const livros = []
+
+
+  snapshot.forEach(doc => {
+    livros.push({...doc.data(), id: doc.id})
+  })
+
+  return livros
 }

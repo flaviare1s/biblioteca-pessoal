@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import '../styles/Livros.css'
 import { UserContext } from '../contexts/UserContext'
 import { Link, useNavigate } from 'react-router-dom'
-import { deleteLivro, getLivrosUsuario } from '../firebase/livro'
+import { getLivros } from '../firebase/livro'
 import toast from 'react-hot-toast'
 import { Badge, Card, Col, Container, Row } from 'react-bootstrap'
 import Loader from '../components/Loader'
@@ -14,19 +14,22 @@ const Livros = () => {
   const navigate = useNavigate()
 
   function carregarLivros() {
-    if (usuario) {
-      getLivrosUsuario(usuario.uid).then((resultados) => {
-        setLivros(resultados)
-      })
-    }
-  }
-
-  function deletarLivro(id) {
-    deleteLivro(id).then(() => {
-      toast.success('Livro removido com sucesso!')
-      carregarLivros()
+    // if (usuario) {
+    //   getLivrosUsuario(usuario.uid).then((resultados) => {
+    //     setLivros(resultados)
+    //   })
+    // }
+    getLivros().then((resultados) => {
+      setLivros(resultados)
     })
   }
+
+  // function deletarLivro(id) {
+  //   deleteLivro(id).then(() => {
+  //     toast.success('Livro removido com sucesso!')
+  //     carregarLivros()
+  //   })
+  // }
 
   useEffect(() => {
     carregarLivros()
