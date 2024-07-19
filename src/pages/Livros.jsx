@@ -77,6 +77,10 @@ const Livros = () => {
                         onClick={() => navigate(`/livros/editar/${livro.id}`)}>
                         <span className="material-symbols-outlined">edit_note</span>
                       </Button>
+                      <Button variant='outline-secondary' className="d-flex align-items-center justify-content-center"
+                        onClick={() => navigate(`/livros/${livro.id}`)}>
+                      <span className="material-symbols-outlined">visibility</span>
+                      </Button>
                       <Button variant='outline-danger' className="d-flex align-items-center justify-content-center"
                         onClick={() => deletarLivro(livro.id)}>
                         <span className="material-symbols-outlined">delete</span>

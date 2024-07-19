@@ -1,26 +1,36 @@
-import { useContext, useState, useEffect } from 'react';
-import '../styles/Livros.css';
-import { UserContext } from '../contexts/UserContext';
-import { Link, useNavigate } from 'react-router-dom';
-import { deleteLivro, getLivros } from '../firebase/livro';
-import toast from 'react-hot-toast';
-import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
-import Loader from '../components/Loader';
-import star from '../assets/star.svg';
-import filledStar from '../assets/filled-star.svg';
+import '../styles/FormAccount.css'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { entrarGoogle, loginUsuario } from "../firebase/auth";
 
-const Livros = () => {
-  const [livros, setLivros] = useState(null);
-  const usuario = useContext(UserContext);
+const Login = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
-  function carregarLivros() {
-    getLivros().then((resultados) => {
-      setLivros(resultados);
-    }).catch((error) => {
-      console.error('Erro ao carregar livros:', error);
-      toast.error('Erro ao carregar livros');
-    });
+  const onSubmit = (data) => {
+    loginUsuario(data.email, data.password)
+      .then(() => {
+        toast.success('Login realizado com sucesso');
+        navigate('/livros');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  }
+
+  const handleGoogleLogin = () => {
+    entrarGoogle()
+      .then(() => {
+        toast.success('Login realizado com sucesso');
+        navigate('/livros');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   }
 
   function deletarLivro(id) {
@@ -39,11 +49,37 @@ const Livros = () => {
 
   return (
     <main>
-      <section className='mt-3'>
-        <h1 className='text-center'>Meus Livros</h1>
-        <hr />
-        <div className='d-flex justify-content-center'>
-          <Link to='/livros/adicionar' className='btn btn-outline-light mb-3'>Adicionar Livro</Link>
+      <Form className='form-section' onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="mb-5">Login</h2>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>E-mail</Form.Label>
+          <Form.Control 
+            type="email" 
+            placeholder="E-mail"
+            {...register("email", { required: 'e-mail obrigatório' })}
+          />
+          { errors.email && <p className="text-danger">{errors.email.message}</p> }
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="password">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control 
+            type="password" 
+            placeholder="Senha"
+            {...register("password", { required: 'senha obrigatória' })}
+          />
+          { errors.password && <p className="text-danger">{errors.password.message}</p> }
+        </Form.Group>
+
+        <div className='container-buttons'>
+          <Button className='btn-login' variant="dark" type="submit">
+            Entrar 
+          </Button>
+          <Button onClick={handleGoogleLogin} className='login-google' type="button">
+            <img src="src/assets/logo-google.png" alt="Imagem do Google" />
+            Entrar com Google 
+          </Button>
         </div>
         {livros ?
           <Row xs={1} sm={2} md={3} lg={4} className='g-4 p-3 justify-content-center align-items-center'>
