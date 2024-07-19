@@ -3,12 +3,34 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { cadastrarUsuario, entrarGoogle } from "../firebase/auth";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { nome, email, password } = data;
+    cadastrarUsuario(nome, email, password)
+      .then(() => {
+        toast.success('Conta criada com sucesso');
+        navigate('/login');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  }
+
+  const handleSubmitGoogle = () => {
+    entrarGoogle().then(() => {
+      toast.success('Conta criada com sucesso');
+      navigate('/login');
+    }
+    ).catch((error) => {
+      toast.error(error.message);
+    });
   }
 
   return (
@@ -50,7 +72,7 @@ const Cadastro = () => {
           <Button className='btn-login' variant="dark" type="submit">
             Criar conta 
           </Button>
-          <Button className='login-google' type="submit">
+          <Button onClick={handleSubmitGoogle} className='login-google' type="button">
             <img src="src/assets/logo-google.png" alt="Imagem do Google" />
             Criar conta com o Google 
           </Button>
