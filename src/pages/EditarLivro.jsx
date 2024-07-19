@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { getLivro, updateLivro } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { UserContext } from '../contexts/UserContext';
-
+import "../styles/EditarLivro.css"
 const EditarLivro = () => {
   const [avaliacao, setAvaliacao] = useState(0);
 
@@ -55,7 +55,7 @@ const EditarLivro = () => {
 
   return (
     <main className='px-3'>
-      <Form className='form-section' onSubmit={handleSubmit(editarLivro)}>
+      <Form className='form-section-edit-livro' onSubmit={handleSubmit(editarLivro)}>
         <h2>Editar Livro</h2>
         <hr />
 

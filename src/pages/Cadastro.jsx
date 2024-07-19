@@ -35,7 +35,7 @@ const Cadastro = () => {
 
   return (
     <main>
-      <Form className='form-section' onSubmit={handleSubmit(onSubmit)}>
+      <Form className='form-section-livro' onSubmit={handleSubmit(onSubmit)}>
         <h2 className="mb-5">Criar conta</h2>
 
         <Form.Group className="mb-3" controlId="nome">

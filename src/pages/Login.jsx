@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <main>
-      <Form className='form-section' onSubmit={handleSubmit(onSubmit)}>
+      <Form className='form-section-livro' onSubmit={handleSubmit(onSubmit)}>
         <h2 className="mb-5">Login</h2>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
