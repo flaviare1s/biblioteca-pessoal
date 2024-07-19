@@ -16,7 +16,7 @@ const Cadastro = () => {
     cadastrarUsuario(nome, email, password)
       .then(() => {
         toast.success('Conta criada com sucesso');
-        navigate('/login');
+        navigate('/livros');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -25,8 +25,8 @@ const Cadastro = () => {
 
   const handleSubmitGoogle = () => {
     entrarGoogle().then(() => {
-      toast.success('Conta criada com sucesso');
-      navigate('/login');
+      toast.success('Login realizado com sucesso');
+      navigate('/livros');
     }
     ).catch((error) => {
       toast.error(error.message);
