@@ -31,7 +31,7 @@ const Menu = () => {
 						{!usuario && <Link className="nav-link" to='/login'>Login</Link>}
 						{!usuario && <Link className="nav-link" to='/cadastro'>Cadastro</Link>}
 						<Link className="nav-link" to='/sobre'>Sobre</Link>
-						{usuario && <span className="nav-link">Nome do Usuário</span>}
+						{usuario && <span className="nav-link">{usuario.displayName}</span>}
 						{usuario && <Button className='nav-btn' onClick={handleLogout} >Sair</Button>}
             </Nav>
           </Navbar.Collapse>
