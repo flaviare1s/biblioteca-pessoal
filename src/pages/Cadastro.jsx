@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { cadastrarUsuario, entrarGoogle } from "../firebase/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import logoGoogle from '../assets/logoGoogle.png';
 
 const Cadastro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -73,7 +74,7 @@ const Cadastro = () => {
             Criar conta 
           </Button>
           <Button onClick={handleSubmitGoogle} className='login-google' type="button">
-            <img src="src/assets/logo-google.png" alt="Imagem do Google" />
+            <img src={logoGoogle} alt="Imagem do Google" />
             Criar conta com o Google 
           </Button>
         </div>
