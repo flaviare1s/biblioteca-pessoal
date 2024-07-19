@@ -8,3 +8,20 @@
 .aga1{
     margin-left: 25%;
 }
+
+.animacao-titulo {
+    animation: fadeIn 3s ease-in-out;
+}
+
+.animacao-paragrafo {
+    animation: fadeIn 4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
