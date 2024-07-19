@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from 'react';
 import '../styles/Livros.css';
 import { UserContext } from '../contexts/UserContext';
-import { Link, useNavigate } from 'react-router-dom';
-import { deleteLivro, getLivros } from '../firebase/livro';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
+import { deleteLivro, getLivrosUsuario } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Loader from '../components/Loader';
@@ -14,19 +14,16 @@ const Livros = () => {
   const usuario = useContext(UserContext);
   const navigate = useNavigate();
 
-  function carregarLivros() {
-    getLivros().then((resultados) => {
+  function carregarDados() {
+    getLivrosUsuario(usuario.uid).then((resultados) => {
       setLivros(resultados);
-    }).catch((error) => {
-      console.error('Erro ao carregar livros:', error);
-      toast.error('Erro ao carregar livros');
-    });
+    })
   }
 
   function deletarLivro(id) {
     deleteLivro(id).then(() => {
       toast.success('Livro removido com sucesso!');
-      carregarLivros();
+      carregarDados();
     }).catch((error) => {
       console.error('Erro ao deletar livro:', error);
       toast.error('Erro ao deletar livro');
@@ -34,8 +31,12 @@ const Livros = () => {
   }
 
   useEffect(() => {
-    carregarLivros();
+    carregarDados();
   }, []);
+
+  if (usuario === null) {
+    return <Navigate to='/login' />
+  }
 
   return (
     <main>
@@ -55,7 +56,7 @@ const Livros = () => {
                     <Card.Text>Autor: {livro.autor}</Card.Text>
                     <Card.Text>Editora: {livro.editora}</Card.Text>
                     <Card.Text>{livro.descricao}</Card.Text>
-                        
+
                     <div className='avaliacao mt-2'>
                       {[1, 2, 3, 4, 5].map((valor) => (
                         <img
@@ -66,7 +67,7 @@ const Livros = () => {
                         />
                       ))}
                     </div>
-                  
+
                     <div className='mb-2 mt-4'>
                       <Badge bg='danger' className='me-2'>{livro.categorias}</Badge>
                       {livro.lido ? <Badge bg='success'>Lido</Badge> : <Badge bg='warning'>Não Lido</Badge>}
@@ -79,7 +80,7 @@ const Livros = () => {
                       </Button>
                       <Button variant='outline-secondary' className="d-flex align-items-center justify-content-center"
                         onClick={() => navigate(`/livros/${livro.id}`)}>
-                      <span className="material-symbols-outlined">visibility</span>
+                        <span className="material-symbols-outlined">visibility</span>
                       </Button>
                       <Button variant='outline-danger' className="d-flex align-items-center justify-content-center"
                         onClick={() => deletarLivro(livro.id)}>

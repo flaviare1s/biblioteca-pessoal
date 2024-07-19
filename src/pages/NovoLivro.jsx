@@ -1,21 +1,25 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { addLivro } from '../firebase/livro';
 import toast from 'react-hot-toast';
+import { UserContext } from '../contexts/UserContext';
 
 const NovoLivro = () => {
   const [avaliacao, setAvaliacao] = useState(0);
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
+  const usuario = useContext(UserContext);
+
   const navigate = useNavigate();
 
   const cadastrarLivro = (data) => {
-    // Adiciona a avaliação ao objeto de dados
+
+    data.idUsuario = usuario.uid
     data.avaliacao = avaliacao;
 
     addLivro(data)
@@ -32,9 +36,9 @@ const NovoLivro = () => {
     setAvaliacao(valor);
   };
 
-  // if (usuario === null) {
-  //   return <Navigate to='/login' />
-  // }
+  if (usuario === null) {
+    return <Navigate to='/login' />
+  }
 
   return (
     <main className='px-3'>

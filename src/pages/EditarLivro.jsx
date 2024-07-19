@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { getLivro, updateLivro } from '../firebase/livro';
 import toast from 'react-hot-toast';
+import { UserContext } from '../contexts/UserContext';
 
 const EditarLivro = () => {
   const [avaliacao, setAvaliacao] = useState(0);
 
   const { id } = useParams();
+
+  const usuario = useContext(UserContext)
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -23,7 +26,7 @@ const EditarLivro = () => {
   function carregarLivro() {
     getLivro(id).then((livro) => {
       if (livro) {
-        setAvaliacao(livro.avaliacao); // Define a avaliação carregada
+        setAvaliacao(livro.avaliacao);
         reset(livro);
       } else {
         navigate('/livros');
@@ -32,7 +35,6 @@ const EditarLivro = () => {
   }
 
   function editarLivro(data) {
-    // Adiciona a avaliação ao objeto de dados
     data.avaliacao = avaliacao;
 
     updateLivro(id, data).then(() => {
@@ -47,9 +49,9 @@ const EditarLivro = () => {
     carregarLivro();
   }, [id]);
 
-  // if (usuario === null) {
-  //   return <Navigate to='/login' />
-  // }
+  if (usuario === null) {
+    return <Navigate to='/login' />
+  }
 
   return (
     <main className='px-3'>
