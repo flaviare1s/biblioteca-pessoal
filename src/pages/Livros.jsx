@@ -15,9 +15,11 @@ const Livros = () => {
   const navigate = useNavigate();
 
   function carregarDados() {
-    getLivrosUsuario(usuario.uid).then((resultados) => {
-      setLivros(resultados);
-    })
+    if(usuario) {
+      getLivrosUsuario(usuario.uid).then((resultados) => {
+        setLivros(resultados);
+      })
+    }
   }
 
   function deletarLivro(id) {
