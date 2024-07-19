@@ -55,10 +55,7 @@ const Livros = () => {
                     <Card.Text>Autor: {livro.autor}</Card.Text>
                     <Card.Text>Editora: {livro.editora}</Card.Text>
                     <Card.Text>{livro.descricao}</Card.Text>
-                    <div className='mb-2'>
-                      <Badge bg='danger'>{livro.categoria}</Badge>
-                    </div>
-                    
+                        
                     <div className='avaliacao mt-2'>
                       {[1, 2, 3, 4, 5].map((valor) => (
                         <img
@@ -69,8 +66,9 @@ const Livros = () => {
                         />
                       ))}
                     </div>
-
+                  
                     <div className='mb-2 mt-4'>
+                      <Badge bg='danger' className='me-2'>{livro.categorias}</Badge>
                       {livro.lido ? <Badge bg='success'>Lido</Badge> : <Badge bg='warning'>Não Lido</Badge>}
                     </div>
 
