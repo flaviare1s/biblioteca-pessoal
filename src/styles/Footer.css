@@ -1,11 +1,11 @@
 .div-footer{
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
     justify-content: space-evenly;
     align-items: center;
     background-color: #e8dacc;
     color: #5a0f19;
-    bottom: 0;
     padding: 10px;
 }
 

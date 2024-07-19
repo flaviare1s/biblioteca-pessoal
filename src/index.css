@@ -16,3 +16,7 @@ body {
   color: #EBDACC;
   background-color: #5a0f19;
 }
+
+.main {
+  min-height: 100vh;
+}
