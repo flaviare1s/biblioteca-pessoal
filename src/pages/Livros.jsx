@@ -21,13 +21,13 @@ const Livros = () => {
   }
 
   function deletarLivro(id) {
-    deleteLivro(id).then(() => {
-      toast.success('Livro removido com sucesso!');
-      carregarDados();
-    }).catch((error) => {
-      console.error('Erro ao deletar livro:', error);
-      toast.error('Erro ao deletar livro');
-    });
+    const deletar = window.confirm('Tem certeza?');
+    if(deletar) {
+      deleteLivro(id).then(() => {
+        toast.success('Livro excluído com sucesso!');
+        carregarDados();
+      })
+    }
   }
 
   useEffect(() => {
