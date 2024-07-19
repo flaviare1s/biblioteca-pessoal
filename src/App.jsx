@@ -20,12 +20,19 @@ import { useEffect, useState } from "react"
 
 const App = () => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUsuarioLogado(user);
+      setLoading(false)
     });
   }, []);
+
+  if(loading){
+    //Este elemento será exibido enquanto a aplicação estiver sendo carregado.
+    return <div>Carregando...</div>
+}
 
   return (
     <UserContext.Provider value={usuarioLogado} >
