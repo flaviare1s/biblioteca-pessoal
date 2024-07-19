@@ -12,6 +12,7 @@ import Politica from "./pages/Politica"
 import NotFound from "./pages/NotFound"
 import Footer from "./components/Footer"
 import { Toaster } from "react-hot-toast"
+import Livro from "./pages/Livro"
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/livros" element={<Livros />} />
           <Route path="/livros/adicionar" element={<NovoLivro />} />
           <Route path="/livros/editar/:id" element={<EditarLivro />} />
+          <Route path="/livros/:id" element={<Livro />} />
           <Route path="/politica" element={<Politica />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
