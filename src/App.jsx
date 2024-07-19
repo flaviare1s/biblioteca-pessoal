@@ -16,7 +16,7 @@ import Livro from "./pages/Livro"
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { useEffect, useState } from "react"
-
+import Loader from "./components/Loader"
 
 const App = () => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -30,8 +30,7 @@ const App = () => {
   }, []);
 
   if(loading){
-    //Este elemento será exibido enquanto a aplicação estiver sendo carregado.
-    return <div>Carregando...</div>
+    return <Loader />
 }
 
   return (
