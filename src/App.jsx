@@ -37,18 +37,20 @@ const App = () => {
     <UserContext.Provider value={usuarioLogado} >
       <BrowserRouter>
         <Menu />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path='/sobre' element={<Sobre />} />
-          <Route path="/livros" element={<Livros />} />
-          <Route path="/livros/adicionar" element={<NovoLivro />} />
-          <Route path="/livros/editar/:id" element={<EditarLivro />} />
-          <Route path="/livros/:id" element={<Livro />} />
-          <Route path="/politica" element={<Politica />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path='/sobre' element={<Sobre />} />
+            <Route path="/livros" element={<Livros />} />
+            <Route path="/livros/adicionar" element={<NovoLivro />} />
+            <Route path="/livros/editar/:id" element={<EditarLivro />} />
+            <Route path="/livros/:id" element={<Livro />} />
+            <Route path="/politica" element={<Politica />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
       <Toaster position="top-center" />
