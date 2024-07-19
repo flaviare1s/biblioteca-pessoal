@@ -1,12 +1,12 @@
 .banner-home{
-    height: 100vh;
+    height: 89vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .aga1{
-    margin-left: 25%;
+    margin-left: 28%;
 }
 
 .animacao-titulo {

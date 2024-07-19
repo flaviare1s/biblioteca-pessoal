@@ -7,7 +7,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { addLivro } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { UserContext } from '../contexts/UserContext';
-
+import "../styles/NovoLivro.css"
 const NovoLivro = () => {
   const [avaliacao, setAvaliacao] = useState(0);
 
@@ -42,7 +42,7 @@ const NovoLivro = () => {
 
   return (
     <main className='px-3'>
-      <Form className='form-section' onSubmit={handleSubmit(cadastrarLivro)}>
+      <Form className='form-section-novo-livro' onSubmit={handleSubmit(cadastrarLivro)}>
         <h2>Cadastrar Novo Livro</h2>
         <hr />
 
