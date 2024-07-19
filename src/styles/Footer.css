@@ -1,0 +1,22 @@
+.div-footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+    align-items: center;
+    background-color: #e8dacc;
+    color: #5a0f19;
+}
+
+.div-footer h2{
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #5a0f19;
+}
+
+.link:hover{
+    color: #8a3119
+}
