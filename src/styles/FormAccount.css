@@ -1,4 +1,4 @@
-.form-section-livro {
+.form-section {
   max-width: 440px;
   margin: 10rem auto 0;
   height: 72vh;
@@ -38,4 +38,11 @@
 
 .login-google img {
   width: 30px;
+}
+
+@media (max-width: 500px) {
+  .form-section {
+    margin: 3rem auto 0;
+    padding: 0 20px;
+  }
 }
