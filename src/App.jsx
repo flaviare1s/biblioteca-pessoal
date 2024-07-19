@@ -13,34 +13,22 @@ import NotFound from "./pages/NotFound"
 import Footer from "./components/Footer"
 import { Toaster } from "react-hot-toast"
 import Livro from "./pages/Livro"
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/config";
 import { useEffect, useState } from "react"
-import { onAuthStateChanged } from "firebase/auth"
-import { Container } from "react-bootstrap"
-import Loader from "./components/Loader"
-import { auth } from "./firebase/config"
 
 
 const App = () => {
-  const [usuarioLogado, setUsuarioLogado] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [usuarioLogado, setUsuarioLogado] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setUsuarioLogado(user)
-      setLoading(false)
-    })
-  }, [])
-
-  if(loading) {
-    return (
-      <Container>
-        <Loader />
-      </Container>
-    )
-  }
+      setUsuarioLogado(user);
+    });
+  }, []);
 
   return (
-    <UserContext.Provider value={ usuarioLogado}>
+    <UserContext.Provider value={usuarioLogado} >
       <BrowserRouter>
         <Menu />
         <Routes>
