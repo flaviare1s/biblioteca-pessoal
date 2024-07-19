@@ -33,7 +33,11 @@ const NovoLivro = () => {
   };
 
   const handleAvaliacaoClick = (valor) => {
-    setAvaliacao(valor);
+    if (avaliacao === valor) {
+      setAvaliacao(0);
+    } else {
+      setAvaliacao(valor);
+    }
   };
 
   if (usuario === null) {
@@ -86,13 +90,14 @@ const NovoLivro = () => {
         </Form.Group>
 
         <section className='avaliacao'>
-          <Form.Label>Avaliação</Form.Label>
+          <Form.Label className='me-2'>Avaliação</Form.Label>
           {[1, 2, 3, 4, 5].map((valor) => (
             <img
               key={valor}
               src={valor <= avaliacao ? filledStar : star}
               alt={`Estrela ${valor}`}
               onClick={() => handleAvaliacaoClick(valor)}
+              className='star'
             />
           ))}
         </section>
