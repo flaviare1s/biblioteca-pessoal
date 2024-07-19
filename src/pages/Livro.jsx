@@ -22,7 +22,7 @@ const Livro = () => {
   return (
     <section className="d-flex flex-column align-items-center min-vh-100">
       <Container className="d-flex flex-column align-items-center">
-        <h1 className="text-center mt-5">{livro.titulo}</h1>
+        <h1 className="text-center">{livro.titulo}</h1>
         <Card className='card-custom w-100 w-md-75 w-lg-50'>
           <Card.Body>
             <Card.Title className='text-center'>{livro.titulo}</Card.Title>
