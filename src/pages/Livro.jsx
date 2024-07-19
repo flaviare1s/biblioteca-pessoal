@@ -22,6 +22,7 @@ const Livro = () => {
   return (
     <section className="d-flex flex-column align-items-center min-vh-100">
       <Container className="d-flex flex-column align-items-center">
+        <h1 className="text-center">{livro.titulo}</h1>
         <Card className='card-custom w-100 w-md-75 w-lg-50'>
           <Card.Body>
             <Card.Title className='text-center'>{livro.titulo}</Card.Title>
@@ -38,7 +39,6 @@ const Livro = () => {
                   key={valor}
                   src={valor <= livro.avaliacao ? filledStar : star}
                   alt={`Estrela ${valor}`}
-                  className='star'
                 />
               ))}
             </div>

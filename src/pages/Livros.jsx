@@ -65,7 +65,6 @@ const Livros = () => {
                           key={valor}
                           src={valor <= livro.avaliacao ? filledStar : star}
                           alt={`Estrela ${valor}`}
-                          className='star'
                         />
                       ))}
                     </div>
