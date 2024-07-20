@@ -6,15 +6,15 @@ import {
 const Politica = () => {
   return (
     <>
-      <>
-        <main className={"container1"}>
+      <main className="politica-container">
+        <section className="container1">
           <Container fluid>
-            <h1>Politica de Privacidade</h1>
+            <h1 className='mt-3 text-center'>Política de Privacidade</h1>
             <hr />
             <Accordion defaultActiveKey="0" flush>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Introdução</Accordion.Header>
-                <Accordion.Body> Bem-vindo(a) ao Minha Biblioteca Pessoal. Valorizamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Esta Política de Privacidade descreve como coletamos, usamos, divulgamos e protegemos suas informações quando você usa nosso site. </Accordion.Body>
+                <Accordion.Body> Bem-vindo(a) ao <strong>Biblioteca Pessoal</strong>. Valorizamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Esta Política de Privacidade descreve como coletamos, usamos, divulgamos e protegemos suas informações quando você usa nosso site. </Accordion.Body>
               </Accordion.Item>
               <br />
               <Accordion.Item eventKey="1">
@@ -82,8 +82,8 @@ const Politica = () => {
             </Accordion>
           </Container>
 
-        </main>
-      </>
+        </section>
+      </main>
 
 
 
