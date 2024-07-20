@@ -21,6 +21,12 @@
   font-weight: bold !important;
 }
 
+.nav-name {
+  color: #8a3119;
+  font-weight: bold !important;
+  margin-right: 30px;
+}
+
 .nav-link:hover {
   color: #8a3119 !important;
 }

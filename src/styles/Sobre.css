@@ -1,19 +1,25 @@
-.container1{
+.sobre-container {
     display: flex;
-    flex-direction: column;
-    background-color: #5A0F19;
-    color: #EBDACC;
-    height: 89vh;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
 
-.sobre{
-    display: flex;
-   flex-direction: column;
-   align-items: center;
-   
+.container1 {
+  background-color: #5a0f19;
+  color: #ebdacc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sobre p {
-    align-self: center;
+  align-self: center;
 }

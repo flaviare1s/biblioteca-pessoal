@@ -4,6 +4,7 @@ import { getLivro } from '../firebase/livro'; // Função para buscar um livro p
 import { Badge, Button, Card, Container } from 'react-bootstrap';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
+import '../styles/Livro.css';
 
 const Livro = () => {
   const { id } = useParams(); // Pega o ID da URL
@@ -20,16 +21,15 @@ const Livro = () => {
   if (!livro) return <div>Carregando...</div>;
 
   return (
-    <section className="d-flex flex-column align-items-center min-vh-100">
+    <section className="d-flex flex-column align-items-center">
       <Container className="d-flex flex-column align-items-center">
         <h1 className="text-center">{livro.titulo}</h1>
-        <Card className='card-custom w-100 w-md-75 w-lg-50'>
+        <Card className='view-livro w-100 w-md-75 w-lg-50'>
           <Card.Body>
             <Card.Title className='text-center'>{livro.titulo}</Card.Title>
             <hr />
             <Card.Text><span className='fw-bold'>Autor:</span> {livro.autor}</Card.Text>
             <Card.Text><span className='fw-bold'>Editora:</span> {livro.editora}</Card.Text>
-            <Card.Text><span className='fw-bold'>Ano:</span> {livro.ano}</Card.Text>
             <Card.Text><span className='fw-bold'>Descrição:</span> {livro.descricao}</Card.Text>
       
             <div className='avaliacao mt-2'>

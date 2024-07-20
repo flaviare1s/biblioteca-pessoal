@@ -42,21 +42,17 @@ const Livros = () => {
 
   return (
     <main>
-      <section className='mt-3'>
+      <section className='mt-3 livros-container'>
         <h1 className='text-center'>Meus Livros</h1>
         <hr />
-        <div className='d-flex justify-content-center'>
-          <Link to='/livros/adicionar' className='btn btn-outline-light mb-3'>Adicionar Livro</Link>
-        </div>
         {livros ?
-          <Row xs={1} sm={2} md={3} lg={4} className='g-4 p-3 justify-content-center align-items-center'>
+          <Row xs={1} sm={2} md={2} lg={3} xl={3} className='g-4 p-3 justify-content-center align-items-center'>
             {livros.map((livro) => (
-              <Col key={livro.id}>
-                <Card className='h-100 card-custom'>
+              <Col key={livro.id} className='d-flex justify-content-center align-items-center'>
+                <Card className='h-100 card-custom card-livros'>
                   <Card.Body>
-                    <Card.Title>{livro.titulo}</Card.Title>
-                    <Card.Text>Autor: {livro.autor}</Card.Text>
-                    <Card.Text>Editora: {livro.editora}</Card.Text>
+                    <Card.Title className='fw-bold text-center'>{livro.titulo}</Card.Title>
+                    <Card.Text><span className='fw-bold'>Autor:</span> {livro.autor}</Card.Text>
                     <Card.Text>{livro.descricao}</Card.Text>
 
                     <div className='avaliacao mt-2'>
@@ -96,6 +92,9 @@ const Livros = () => {
           :
           <Loader />
         }
+        <div className='d-flex justify-content-center'>
+          <Link to='/livros/adicionar' className='btn btn-outline-light my-3'>Adicionar Livro</Link>
+        </div>
       </section>
     </main>
   );
