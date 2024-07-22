@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import { auth } from "./config";
+import toast from "react-hot-toast";
 
 export async function cadastrarUsuario(nome, email, senha) {
 
@@ -18,4 +19,13 @@ export async function loginUsuario(email, senha) {
 
 export async function logout() {
   await signOut(auth);
+}
+
+export async function verificarEmail() {
+  const user = auth.currentUser;
+  
+  sendEmailVerification(user).then(() => {
+    toast.success('E-mail de verificação enviado');
+
+  });
 }
