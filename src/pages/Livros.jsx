@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { deleteLivro, getLivrosCategoria, getLivrosStatus, getLivrosUsuario } from '../firebase/livro';
 import toast from 'react-hot-toast';
-import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import { Badge, Button, Card, Col } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
