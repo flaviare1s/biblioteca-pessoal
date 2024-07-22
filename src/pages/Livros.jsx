@@ -31,12 +31,13 @@ const Livros = () => {
     }
   }
 
-  function filtrarLivrosCategoria(categoria) {
+  function filtrarLivrosCategoria(categorias) {
+    console.log(categorias)
     if(usuario) {
-      if(categoria === 'Todos') {
+      if(categorias === 'Todos') {
         carregarDados();
       } else {
-        getLivrosCategoria(usuario.uid, categoria).then((resultados) => {
+        getLivrosCategoria(usuario.uid, categorias).then((resultados) => {
           setLivros(resultados);
         })
       }

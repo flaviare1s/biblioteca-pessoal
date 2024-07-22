@@ -34,8 +34,8 @@ export async function getLivrosStatus(idUsuario, statusLeitura) {
   return livros
 }
 
-export async function getLivrosCategoria(idUsuario, categoria) {
-  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario), where('categoria', '==', categoria))
+export async function getLivrosCategoria(idUsuario, categorias) {
+  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario), where('categorias', '==', categorias))
   const snapshot = await getDocs(filtro)
   const livros = []
 
