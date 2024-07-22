@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import '../styles/Livros.css';
 import { UserContext } from '../contexts/UserContext';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
-import { deleteLivro, getLivrosStatus, getLivrosUsuario } from '../firebase/livro';
+import { deleteLivro, getLivrosCategoria, getLivrosStatus, getLivrosUsuario } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Loader from '../components/Loader';
@@ -36,7 +36,7 @@ const Livros = () => {
       if(categoria === 'Todos') {
         carregarDados();
       } else {
-        getLivrosUsuario(usuario.uid, categoria).then((resultados) => {
+        getLivrosCategoria(usuario.uid, categoria).then((resultados) => {
           setLivros(resultados);
         })
       }
