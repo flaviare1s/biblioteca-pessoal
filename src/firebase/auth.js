@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, sendEmailVerification, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import { auth } from "./config";
 import toast from "react-hot-toast";
 
@@ -27,5 +27,13 @@ export async function verificarEmail() {
   sendEmailVerification(user).then(() => {
     toast.success('E-mail de verificação enviado');
 
+  });
+}
+
+export async function resetarSenha(email) {
+  sendPasswordResetEmail(auth, email).then(() => {
+    toast.success('E-mail de recuperação enviado');
+  }).catch((error) => {
+    toast.error(error.message);
   });
 }
