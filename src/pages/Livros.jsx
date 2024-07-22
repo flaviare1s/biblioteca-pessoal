@@ -94,7 +94,7 @@ const Livros = () => {
                   <Card.Body>
                     <Card.Title className='fw-bold text-center'>{livro.titulo}</Card.Title>
                     <Card.Text><span className='fw-bold'>Autor:</span> {livro.autor}</Card.Text>
-                    <Card.Text>{livro.descricao}</Card.Text>
+                    <Card.Text><span className='fw-bold'>Descrição:</span> {livro.descricao}</Card.Text>
 
                     <div className='avaliacao mt-2'>
                       {[1, 2, 3, 4, 5].map((valor) => (
