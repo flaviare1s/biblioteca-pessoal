@@ -91,6 +91,7 @@ const EditarLivro = () => {
           <Form.Control as='select' {...register('categorias')}>
             <option>Ficção</option>
             <option>Literatura</option>
+            <option>Fantasia</option>
             <option>Terror</option>
             <option>Romance</option>
             <option>Auto-ajuda</option>
