@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  min-height: 360px;
+  min-height: 400px;
   width: 100%;
 }
 
@@ -18,7 +18,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
