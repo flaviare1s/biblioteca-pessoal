@@ -2,12 +2,13 @@ import { useContext, useState, useEffect } from 'react';
 import '../styles/Livros.css';
 import { UserContext } from '../contexts/UserContext';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
-import { deleteLivro, getLivrosUsuario } from '../firebase/livro';
+import { deleteLivro, getLivrosLidos, getLivrosUsuario, livrosCol } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
+// import { getDocs, query, where } from 'firebase/firestore';
 
 const Livros = () => {
   const [livros, setLivros] = useState(null);
@@ -17,6 +18,14 @@ const Livros = () => {
   function carregarDados() {
     if(usuario) {
       getLivrosUsuario(usuario.uid).then((resultados) => {
+        setLivros(resultados);
+      })
+    }
+  }
+
+  function filtrarLivrosLidos() {
+    if(usuario) {
+      getLivrosLidos(usuario.uid).then((resultados) => {
         setLivros(resultados);
       })
     }
@@ -45,6 +54,7 @@ const Livros = () => {
       <section className='mt-3 livros-container'>
         <h1 className='text-center'>Meus Livros</h1>
         <hr />
+        <Button variant='outline-light' onClick={filtrarLivrosLidos}>Mostrar Lidos</Button>
         {livros ?
           <Row xs={1} sm={2} md={2} lg={3} xl={3} className='g-4 p-3 justify-content-center align-items-center'>
             {livros.map((livro) => (
