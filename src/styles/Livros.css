@@ -1,3 +1,9 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 1rem;
+}
+
 .card-custom {
   background-color: #e8dacc !important;
   display: flex;
@@ -32,4 +38,21 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.filter-container {
+  flex-wrap: wrap;
+}
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .grid { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 769px) {
+  .grid { 
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

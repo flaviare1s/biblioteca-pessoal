@@ -22,8 +22,20 @@ export async function getLivrosUsuario(idUsuario) {
   return livros
 }
 
-export async function getLivrosLidos(idUsuario) {
-  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario), where('lido', '==', true))
+export async function getLivrosStatus(idUsuario, statusLeitura) {
+  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario), where('lido', '==', statusLeitura))
+  const snapshot = await getDocs(filtro)
+  const livros = []
+
+  snapshot.forEach((doc) => {
+    livros.push({...doc.data(), id: doc.id})
+  })
+
+  return livros
+}
+
+export async function getLivrosCategoria(idUsuario, categoria) {
+  const filtro = query (livrosCol, where('idUsuario', '==', idUsuario), where('categoria', '==', categoria))
   const snapshot = await getDocs(filtro)
   const livros = []
 
