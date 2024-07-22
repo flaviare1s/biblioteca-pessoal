@@ -2,12 +2,13 @@ import { useContext, useState, useEffect } from 'react';
 import '../styles/Livros.css';
 import { UserContext } from '../contexts/UserContext';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
-import { deleteLivro, getLivrosUsuario } from '../firebase/livro';
+import { deleteLivro, getLivrosCategoria, getLivrosStatus, getLivrosUsuario } from '../firebase/livro';
 import toast from 'react-hot-toast';
 import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import star from '../assets/star.svg';
 import filledStar from '../assets/filled-star.svg';
+// import { getDocs, query, where } from 'firebase/firestore';
 
 const Livros = () => {
   const [livros, setLivros] = useState(null);
@@ -19,6 +20,26 @@ const Livros = () => {
       getLivrosUsuario(usuario.uid).then((resultados) => {
         setLivros(resultados);
       })
+    }
+  }
+
+  function filtrarLivrosStatus(statusLeitura) {
+    if(usuario) {
+      getLivrosStatus(usuario.uid, statusLeitura).then((resultados) => {
+        setLivros(resultados);
+      })
+    }
+  }
+
+  function filtrarLivrosCategoria(categoria) {
+    if(usuario) {
+      if(categoria === 'Todos') {
+        carregarDados();
+      } else {
+        getLivrosCategoria(usuario.uid, categoria).then((resultados) => {
+          setLivros(resultados);
+        })
+      }
     }
   }
 
@@ -42,11 +63,30 @@ const Livros = () => {
 
   return (
     <main>
+      <div className='m-3 d-flex justify-content-evenly align-items-center gap-3 filter-container'>
+        <Button variant='outline-light' onClick={() => filtrarLivrosStatus(true)}>Mostrar Lidos</Button>
+        <Button variant='outline-light' onClick={() => filtrarLivrosStatus(false)}>Mostrar Não Lidos</Button>
+        <div className='d-flex align-items-center justify-content-center gap-2'>
+          <h6>Filtrar por Categoria:</h6>
+          <select onChange={e => filtrarLivrosCategoria(e.target.value)}>
+            <option value="Todos">Todas</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Literatura">Literatura</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Romance">Romance</option> 
+            <option value="Não-ficção">Não-ficção</option>
+            <option value="Filosofia">Filosofia</option>
+            <option value="Auto-ajuda">Auto-ajuda</option>
+          </select>
+        </div>
+      </div>
+      <hr />
       <section className='mt-3 livros-container'>
         <h1 className='text-center'>Meus Livros</h1>
         <hr />
         {livros ?
-          <Row xs={1} sm={2} md={2} lg={3} xl={3} className='g-4 p-3 justify-content-center align-items-center'>
+          <section className='g-4 p-3 grid'>
             {livros.map((livro) => (
               <Col key={livro.id} className='d-flex justify-content-center align-items-center'>
                 <Card className='h-100 card-custom card-livros'>
@@ -88,7 +128,7 @@ const Livros = () => {
                 </Card>
               </Col>
             ))}
-          </Row>
+          </section>
           :
           <Loader />
         }
