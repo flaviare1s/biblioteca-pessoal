@@ -97,7 +97,6 @@ const EditarLivro = () => {
             <option>Não-ficção</option>
             <option>Filosofia</option>
             <option>Auto-ajuda</option>
-
           </Form.Control>
         </Form.Group>
 
