@@ -40,9 +40,14 @@
   width: 30px;
 }
 
+.small-actions {
+  font-size: 14px;
+}
+
 @media (max-width: 500px) {
   .form-section {
     margin: 3rem auto 0;
     padding: 0 20px;
   }
 }
+
