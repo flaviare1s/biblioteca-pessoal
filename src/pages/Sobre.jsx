@@ -14,8 +14,8 @@ const Sobre = () => {
                     <hr/>
                     <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>Sobre mim</Accordion.Header>
-                            <Accordion.Body> Bem-vindo(a) ao Minha Biblioteca Pessoal! Somos apaixonados por livros e criamos esta aplicação para ajudar pessoas como você a organizar e gerenciar suas coleções de livros de forma prática e intuitiva. </Accordion.Body>
+                            <Accordion.Header>Sobre nós</Accordion.Header>
+                            <Accordion.Body> Bem-vindo(a) ao <strong>Biblioteca Pessoal</strong>! Somos apaixonados por livros e criamos esta aplicação para ajudar pessoas como você a organizar e gerenciar suas coleções de livros de forma prática e intuitiva. </Accordion.Body>
                         </Accordion.Item>
                         <br/>
                         <Accordion.Item eventKey="1">
@@ -26,9 +26,9 @@ const Sobre = () => {
                         </Accordion.Item>
                         <br/>
                         <Accordion.Item eventKey='2'>
-                          <Accordion.Header>Minha História</Accordion.Header>
+                          <Accordion.Header>Nossa História</Accordion.Header>
                           <Accordion.Body>
-                            Desde a infância, sempre fomos fascinados por livros. Seja mergulhando em romances épicos, aprendendo com biografias inspiradoras ou explorando o vasto mundo do conhecimento através de obras de não-ficção, os livros sempre foram uma parte essencial de nossas vidas. Com o passar dos anos, nossa coleção de livros cresceu, e percebemos a necessidade de uma maneira eficiente de organizá-la. Unimos o útil ao agradável e transformamos um trabalho exigido em um curso em um aplicativo para gestão de coleções de livros
+                            Desde a infância, sempre fomos fascinados por livros. Seja mergulhando em romances épicos, aprendendo com biografias inspiradoras ou explorando o vasto mundo do conhecimento através de obras de não-ficção, os livros sempre foram uma parte essencial de nossas vidas. Com o passar dos anos, nossa coleção de livros cresceu, e percebemos a necessidade de uma maneira eficiente de organizá-la. Unimos o útil ao agradável e transformamos um trabalho exigido em um curso em um aplicativo para gestão de coleções de livros.
                           </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
