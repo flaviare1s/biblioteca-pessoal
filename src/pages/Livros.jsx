@@ -69,6 +69,7 @@ const Livros = () => {
         <div className='d-flex align-items-center justify-content-center gap-2'>
           <h6>Filtrar por Categoria:</h6>
           <select onChange={e => filtrarLivrosCategoria(e.target.value)}>
+            <option value="Todos">Todas</option>
             <option value="Ficção">Ficção</option>
             <option value="Literatura">Literatura</option>
             <option value="Fantasia">Fantasia</option>
@@ -77,7 +78,6 @@ const Livros = () => {
             <option value="Não-ficção">Não-ficção</option>
             <option value="Filosofia">Filosofia</option>
             <option value="Auto-ajuda">Auto-ajuda</option>
-            <option value="Todos">Todos</option>
           </select>
         </div>
       </div>
