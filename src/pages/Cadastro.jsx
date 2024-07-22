@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { cadastrarUsuario, entrarGoogle } from "../firebase/auth";
+import { cadastrarUsuario, entrarGoogle, verificarEmail } from "../firebase/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import logoGoogle from '../assets/logoGoogle.png';
@@ -16,6 +16,7 @@ const Cadastro = () => {
     const { nome, email, password } = data;
     cadastrarUsuario(nome, email, password)
       .then(() => {
+        verificarEmail();
         toast.success('Conta criada com sucesso');
         navigate('/livros');
       })
@@ -26,6 +27,7 @@ const Cadastro = () => {
 
   const handleSubmitGoogle = () => {
     entrarGoogle().then(() => {
+      verificarEmail();
       toast.success('Login realizado com sucesso');
       navigate('/livros');
     }
