@@ -92,10 +92,12 @@ const EditarLivro = () => {
             <option>Ficção</option>
             <option>Literatura</option>
             <option>Fantasia</option>
-            <option>Terror</option>
+            <option>Thriller</option>
             <option>Romance</option>
-            <option>Auto-ajuda</option>
+            <option>Não-ficção</option>
             <option>Filosofia</option>
+            <option>Auto-ajuda</option>
+
           </Form.Control>
         </Form.Group>
 
