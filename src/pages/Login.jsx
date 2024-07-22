@@ -68,8 +68,13 @@ const Login = () => {
             Entrar com Google 
           </Button>
         </div>
-        <div className="mt-3">
-          <small>Não possui conta? <Link to="/cadastro">Criar conta</Link></small>
+        <div className='mt-5 flex-wrap gap-3 d-flex justify-content-between'>
+          <div className=" small-actions">
+            <small>Não possui conta? <Link to="/cadastro">Criar conta</Link></small>
+          </div>
+          <div className='small-actions'>
+            <small>Esqueceu a senha? <Link to="/recuperar-senha">Clique aqui</Link></small>
+          </div>
         </div>
       </Form>
     </main>
