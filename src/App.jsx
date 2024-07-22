@@ -17,6 +17,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { useEffect, useState } from "react"
 import Loader from "./components/Loader"
+import RecuperarSenha from "./pages/RecuperarSenha"
 
 const App = () => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/livros/editar/:id" element={<EditarLivro />} />
             <Route path="/livros/:id" element={<Livro />} />
             <Route path="/politica" element={<Politica />} />
+            <Route path="/recuperar-senha" element={<RecuperarSenha />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
