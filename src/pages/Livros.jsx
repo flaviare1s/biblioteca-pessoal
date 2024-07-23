@@ -108,6 +108,9 @@ const Livros = () => {
             <option value="Auto-ajuda">Auto-ajuda</option>
           </select>
         </div>
+        <div className='d-flex justify-content-center'>
+          <Link to='/livros/adicionar' className='btn btn-outline-light'>Adicionar Livro</Link>
+        </div>
       </div>
       <hr />
       <section className='mt-3 livros-container'>
@@ -157,9 +160,6 @@ const Livros = () => {
           :
           <Loader />
         }
-        <div className='d-flex justify-content-center'>
-          <Link to='/livros/adicionar' className='btn btn-outline-light my-3'>Adicionar Livro</Link>
-        </div>
       </section>
     </main>
   );
