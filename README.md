@@ -1,6 +1,7 @@
 ## Biblioteca Pessoal
 
 Este é um projeto de biblioteca pessoal desenvolvido com React e Firebase, onde você pode cadastrar livros, adicionar categorias e informar se o livro já foi lido ou não.
+Foi elaborado em grupo por Flávia Reis, Arthur Cavalcante e Moisés Almeida como uma das avaliações do bootcamp da SoulCode Academy.
 
 ### Objetivo
 Criar um CRUD utilizando React e Firebase para gerenciar um catálogo de livros, apresentando as quatro operações básicas: criação, leitura, atualização e exclusão de dados.
@@ -55,3 +56,12 @@ Criar um CRUD utilizando React e Firebase para gerenciar um catálogo de livros,
 ```bash
   npm run dev
 ```
+
+
+## Hospedagem do Projeto
+Você pode visulizar o projeto clicando no seguinte link:
+https://semanal-crud.web.app/
+
+## Repositório original
+
+https://github.com/Linsarthur/biblioteca-pessoal
