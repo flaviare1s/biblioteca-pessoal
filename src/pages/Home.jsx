@@ -1,6 +1,18 @@
+import { useContext, useEffect } from 'react'
 import '../styles/Home.css'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../contexts/UserContext'
 
 const Home = () => {
+  const userLogged = useContext(UserContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (userLogged) {
+      navigate('/livros')
+    }
+  }, [userLogged, navigate])
+
   return (
     <>
       <main className='banner-home'>

@@ -1,4 +1,10 @@
-## Biblioteca Pessoal
+# Biblioteca Pessoal
+
+## Projeto desenvolvido por mim (Flávia Reis), Arthur Cavalcante e Noisés Almeida no Bootcamp da SoulCode Academy
+
+## Repositório original
+
+https://github.com/Linsarthur/biblioteca-pessoal
 
 Este é um projeto de biblioteca pessoal desenvolvido com React e Firebase, onde você pode cadastrar livros, adicionar categorias e informar se o livro já foi lido ou não.
 Foi elaborado em grupo por Flávia Reis, Arthur Cavalcante e Moisés Almeida como uma das avaliações do bootcamp da SoulCode Academy.
@@ -61,7 +67,3 @@ Criar um CRUD utilizando React e Firebase para gerenciar um catálogo de livros,
 ## Hospedagem do Projeto
 Você pode visulizar o projeto clicando no seguinte link:
 https://semanal-crud.web.app/
-
-## Repositório original
-
-https://github.com/Linsarthur/biblioteca-pessoal
