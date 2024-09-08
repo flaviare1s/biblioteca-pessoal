@@ -66,4 +66,4 @@ Criar um CRUD utilizando React e Firebase para gerenciar um catálogo de livros,
 
 ## Hospedagem do Projeto
 Você pode visulizar o projeto clicando no seguinte link:
-https://semanal-crud.web.app/
+https://biblioteca-pessoal-4a289.web.app/
