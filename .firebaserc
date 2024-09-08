@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "semanal-crud"
-  }
+    "default": "semanal-crud",
+    "biblioteca-pessoal": "biblioteca-pessoal-4a289"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
