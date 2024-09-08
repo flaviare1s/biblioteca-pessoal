@@ -14,7 +14,7 @@ Criar um CRUD utilizando React e Firebase para gerenciar um catálogo de livros,
 
 
 
-## Tecnologias utilizada
+## Tecnologias utilizadas
 
 - React
 - Firebase (Authentication e Firestore)
