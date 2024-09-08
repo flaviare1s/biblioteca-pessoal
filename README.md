@@ -1,6 +1,6 @@
 # Biblioteca Pessoal
 
-## Projeto desenvolvido por mim (Flávia Reis), Arthur Cavalcante e Noisés Almeida no Bootcamp da SoulCode Academy
+## Projeto desenvolvido por mim (Flávia Reis), Arthur Cavalcante e Moisés Almeida no Bootcamp da SoulCode Academy
 
 ## Repositório original
 
